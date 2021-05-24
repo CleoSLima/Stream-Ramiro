@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: visible;
+}
+
+body {
+    text-shadow: 0 0 1px #000, 0 0 2px #000;
+    background: {background_color};
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: {font_size};
+    line-height: 1.5em;
+    color: white;
+}
+
+#log>div {
+    animation: fadeIn .8s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+    -webkit-animation: fadeIn .8s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+}
+
+.colon {
+    display: none;
+}
+
+#log {
+    display: table;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 10px 10px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#log>div {
+    display: block;
+  	margin-bottom: 10px;
+}
+
+#log>div.deleted {
+    visibility: hidden;
+}
+
+#log .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0.4em 0.2em;
+    position: relative;
+}
+
+#log .emote img {
+    display: inline-block;
+    height: 1em;
+    opacity: 0;
+}
+
+#log .message,#log .meta {
+    vertical-align: top;
+    padding-bottom: 0.1em;
+  	border-radius: 4px;
+  	
+}
+
+#log .meta {
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: visible;
+    position: relative;
+    bottom: -3px;
+    z-index: 1;
+  	padding: 0 10px 0 2px;
+}
+
+
+#log .message {
+  	display: block;
+    width: fit-content;
+  	max-width: 100%; 
+    word-wrap: break-word;
+  	overflow-wrap: break-word;
+  
+  	text-align: left;
+  	padding-top: 1rem;
+  	padding-left: 1rem;
+  	height: auto;
+  	background-color: #000000;
+  	border-radius: 0 20px 0;
+}
+.nome-border{
+  	border-radius: 0 20px 0;
+  	background-color: #BE2B87;
+  	border-image-slice: 1;
+  	border-width: 4px;
+  	width: fit-content;
+}
+
+.all-div:nth-child(odd) .nome-border { 
+  	border-radius: 0 20px 0;
+  	background-color: #4C59A4;
+  	border-image-slice: 1;
+  	border-width: 4px;
+  	width: fit-content;
+}
+
+.all-div:nth-child(odd) .message-border::after{ 
+  	position: absolute;
+  	top: -4px; bottom: -4px;
+  	left: -4px; right: -4px;
+  	background:  #4C59A4;
+  	content: '';
+  	z-index: -1;
+  	border-radius: 0 20px 0;
+}
+
+
+
+.message-border {
+  position: relative;
+  	border: 4px solid transparent;
+  	border-radius: 40px;
+  	background: #000000;
+  	background-clip: padding-box;
+    padding: 10px;
+}
+.message-border::after{
+  position: absolute;
+  top: -4px; bottom: -4px;
+  left: -4px; right: -4px;
+  background: #BE2B87;
+  content: '';
+  z-index: -1;
+  border-radius: 0 20px 0;
+}
+
+.badge {
+    display: inline-block;
+		margin-left: 0.4em;
+    position: relative;
+    height: 1em;
+    vertical-align: middle;
+    top: -0.1em;
+}
+
+.name {
+    margin-left: 0.2em;
+  	font-size: 21px;
+}
+.message{
+  font-size: 23px;
+}
